@@ -21,7 +21,7 @@ setup(
     description="Calculate bitrate statistics using FFmpeg",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/slhck/ffmpeg-bitrate-stats",
+    url="https://github.com/aachenmax/ffmpeg-bitrate-stats",
     author="Werner Robitza",
     author_email="werner.robitza@gmail.com",
     license="MIT",
