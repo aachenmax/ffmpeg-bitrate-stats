@@ -244,14 +244,13 @@ class BitrateStats:
         Given a list of frames with size and PTS, get the bitrate,
         which is done by dividing size through Δ time.
         """
-        if len(frame_list) < 2:
-            return math.nan
-        size = sum(f["size"] for f in frame_list)
-        times = [f["pts"] for f in frame_list]
-        sum_delta_time = sum(float(curr) - float(prev) for curr, prev in zip(times[1:], times))
-        bitrate = ((size * 8) / 1000) / sum_delta_time
+        if len(frame_list) > 1:
+            size = sum(f["size"] for f in frame_list)
+            times = [f["pts"] for f in frame_list]
+            sum_delta_time = sum(float(curr) - float(prev) for curr, prev in zip(times[1:], times))
+            bitrate = ((size * 8) / 1000) / sum_delta_time
 
-        return bitrate
+            return bitrate
 
     def _calculate_max_min_bitrate(self):
         """
