@@ -233,7 +233,7 @@ class BitrateStats:
 
         # calculate BR per group
         self._chunks = [
-            BitrateStats._bitrate_for_frame_list(x) for x in aggregation_chunks
+            BitrateStats._bitrate_for_frame_list(x) for x in aggregation_chunks if len(x) > 1
         ]
 
         return self._chunks
